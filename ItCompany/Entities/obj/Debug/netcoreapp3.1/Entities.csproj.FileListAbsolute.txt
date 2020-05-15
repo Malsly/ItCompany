@@ -1,0 +1,12 @@
+D:\univer\AAA\web\NEW START\ItCompany\Entities\bin\Debug\netcoreapp3.1\Entities.deps.json
+D:\univer\AAA\web\NEW START\ItCompany\Entities\bin\Debug\netcoreapp3.1\Entities.dll
+D:\univer\AAA\web\NEW START\ItCompany\Entities\bin\Debug\netcoreapp3.1\Entities.pdb
+D:\univer\AAA\web\NEW START\ItCompany\Entities\bin\Debug\netcoreapp3.1\DAL.Abstract.dll
+D:\univer\AAA\web\NEW START\ItCompany\Entities\bin\Debug\netcoreapp3.1\DAL.Abstract.pdb
+D:\univer\AAA\web\NEW START\ItCompany\Entities\obj\Debug\netcoreapp3.1\Entities.csprojAssemblyReference.cache
+D:\univer\AAA\web\NEW START\ItCompany\Entities\obj\Debug\netcoreapp3.1\Entities.csproj.CoreCompileInputs.cache
+D:\univer\AAA\web\NEW START\ItCompany\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfoInputs.cache
+D:\univer\AAA\web\NEW START\ItCompany\Entities\obj\Debug\netcoreapp3.1\Entities.AssemblyInfo.cs
+D:\univer\AAA\web\NEW START\ItCompany\Entities\obj\Debug\netcoreapp3.1\Entities.csproj.CopyComplete
+D:\univer\AAA\web\NEW START\ItCompany\Entities\obj\Debug\netcoreapp3.1\Entities.dll
+D:\univer\AAA\web\NEW START\ItCompany\Entities\obj\Debug\netcoreapp3.1\Entities.pdb

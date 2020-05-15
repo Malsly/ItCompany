@@ -1,0 +1,48 @@
+﻿@model Entities.Task
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Task</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.FullDiscription)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.FullDiscription)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Start)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Start)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Deadline)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Deadline)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Performed)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Performed)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

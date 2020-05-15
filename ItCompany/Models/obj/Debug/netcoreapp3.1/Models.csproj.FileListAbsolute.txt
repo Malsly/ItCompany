@@ -1,0 +1,9 @@
+D:\univer\AAA\web\NEW START\ItCompany\Models\bin\Debug\netcoreapp3.1\Models.deps.json
+D:\univer\AAA\web\NEW START\ItCompany\Models\bin\Debug\netcoreapp3.1\Models.dll
+D:\univer\AAA\web\NEW START\ItCompany\Models\bin\Debug\netcoreapp3.1\Models.pdb
+D:\univer\AAA\web\NEW START\ItCompany\Models\obj\Debug\netcoreapp3.1\Models.csproj.CoreCompileInputs.cache
+D:\univer\AAA\web\NEW START\ItCompany\Models\obj\Debug\netcoreapp3.1\Models.AssemblyInfoInputs.cache
+D:\univer\AAA\web\NEW START\ItCompany\Models\obj\Debug\netcoreapp3.1\Models.AssemblyInfo.cs
+D:\univer\AAA\web\NEW START\ItCompany\Models\obj\Debug\netcoreapp3.1\Models.dll
+D:\univer\AAA\web\NEW START\ItCompany\Models\obj\Debug\netcoreapp3.1\Models.pdb
+D:\univer\AAA\web\NEW START\ItCompany\Models\obj\Debug\netcoreapp3.1\Models.csprojAssemblyReference.cache
