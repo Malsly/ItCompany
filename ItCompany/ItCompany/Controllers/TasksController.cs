@@ -7,147 +7,134 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using DAL.Impl;
 using Entities;
+using BL.Abstract;
+using Models;
+using ItCompany.ViewDataParams;
 
 namespace ItCompany.Controllers
 {
     public class TasksController : Controller
     {
-        private readonly ItCompanyContext _context;
 
-        public TasksController(ItCompanyContext context)
+        private readonly ITaskService _TaskService;
+        private readonly IEmployeeService _EmployeeService;
+        private readonly IDepartmentService _DepartmentService;
+
+
+        public TasksController(ITaskService taskService, IEmployeeService employeeService, IDepartmentService departmentService)
         {
-            _context = context;
+            _TaskService = taskService;
+            _EmployeeService = employeeService;
+            _DepartmentService = departmentService;
         }
 
         // GET: Tasks
-        public async Task<IActionResult> Index()
+        public ActionResult<IEnumerable<TaskDTO>> Index([FromForm] string[] filters)
         {
-            return View(await _context.Task.ToListAsync());
+            return View(_TaskService.GetAll().Data);
         }
 
-        // GET: Tasks/Details/5
-        public async Task<IActionResult> Details(int? id)
+        // GET: [controller]/Details/5
+        [HttpGet("[controller]/Details/{id}")]
+        public ActionResult<TaskDTO> Details(int id)
         {
-            if (id == null)
-            {
+            var item = _TaskService.Get(id).Data;
+            if (item == null)
                 return NotFound();
-            }
-
-            var task = await _context.Task
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (task == null)
-            {
-                return NotFound();
-            }
-
-            return View(task);
+            return View(item);
         }
 
         // GET: Tasks/Create
         public IActionResult Create()
         {
+            ConfigureViewData();
             return View();
         }
 
-        // POST: Tasks/Create
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+
+        // POST: [controller]/Create
+        [HttpPost("[controller]/Create")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,FullDiscription,Start,Deadline,Performed")] Entities.Task task)
+        public IActionResult Create([FromForm] TaskDTO item)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(task);
-                await _context.SaveChangesAsync();
+                _TaskService.Add(item);
                 return RedirectToAction(nameof(Index));
             }
-            return View(task);
+
+            ConfigureViewData();
+            return View(item);
         }
 
-        // GET: Tasks/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        // GET: [controller]/Edit/5
+        [HttpGet("[controller]/Edit/{id}")]
+        public IActionResult Edit(int id)
         {
-            if (id == null)
-            {
+            var item = _TaskService.Get(id).Data;
+            if (item == null)
                 return NotFound();
-            }
-
-            var task = await _context.Task.FindAsync(id);
-            if (task == null)
-            {
-                return NotFound();
-            }
-            return View(task);
+            ConfigureViewData(item);
+            return View(item);
         }
 
-        // POST: Tasks/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to, for 
-        // more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
+        // POST: [controller]/Edit/5
+        [HttpPost("[controller]/Edit/{id}")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,FullDiscription,Start,Deadline,Performed")] Entities.Task task)
+        public IActionResult Edit(int id, [FromForm] TaskDTO item)
         {
-            if (id != task.Id)
-            {
-                return NotFound();
-            }
-
             if (ModelState.IsValid)
             {
-                try
-                {
-                    _context.Update(task);
-                    await _context.SaveChangesAsync();
-                }
-                catch (DbUpdateConcurrencyException)
-                {
-                    if (!TaskExists(task.Id))
-                    {
-                        return NotFound();
-                    }
-                    else
-                    {
-                        throw;
-                    }
-                }
+                _TaskService.Update(item);
                 return RedirectToAction(nameof(Index));
             }
-            return View(task);
+            ConfigureViewData(item);
+            return View(item);
         }
 
-        // GET: Tasks/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        // GET: [controller]/Delete/5
+        [HttpGet("[controller]/Delete/{id}")]
+        public ActionResult<TaskDTO> Delete(int id)
         {
-            if (id == null)
-            {
+            var item = _TaskService.Get(id).Data;
+            if (item == null)
                 return NotFound();
-            }
-
-            var task = await _context.Task
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (task == null)
-            {
-                return NotFound();
-            }
-
-            return View(task);
+            return View(item);
         }
 
-        // POST: Tasks/Delete/5
-        [HttpPost, ActionName("Delete")]
+        //POST: [controller]/Delete/5
+        [HttpPost("[controller]/Delete/{id}"), ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public ActionResult<TaskDTO> DeleteConfirmed(int id)
         {
-            var task = await _context.Task.FindAsync(id);
-            _context.Task.Remove(task);
-            await _context.SaveChangesAsync();
+            var item = _TaskService.Delete(id);
+            if (item == null)
+                return NotFound();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool TaskExists(int id)
+        protected void ConfigureViewData()
         {
-            return _context.Task.Any(e => e.Id == id);
+            ViewData[TasksViewDataParams.EmpoyeeId] = new SelectList(
+                _EmployeeService.GetAll().Data,
+                nameof(EmployeeDTO.Id),
+                nameof(Employee.Name));
+
+            ViewData[TasksViewDataParams.DepartmentId] = new SelectList(_DepartmentService.GetAll().Data,
+                nameof(DepartmentDTO.Id),
+                nameof(DepartmentDTO.Name));
+        }
+
+        protected void ConfigureViewData(TaskDTO dto)
+        {
+            ViewData[TasksViewDataParams.EmpoyeeId] = new SelectList(
+                _EmployeeService.GetAll().Data,
+                nameof(EmployeeDTO.Id),
+                nameof(Employee.Name), dto);
+
+            ViewData[TasksViewDataParams.DepartmentId] = new SelectList(_DepartmentService.GetAll().Data,
+                nameof(DepartmentDTO.Id),
+                nameof(DepartmentDTO.Name), dto);
         }
     }
 }
