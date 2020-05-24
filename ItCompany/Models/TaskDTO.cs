@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Models
 {
-    public class TaskDTO
+    public class TaskDTO : IDTO
     {
         public int Id { get; set; }
 

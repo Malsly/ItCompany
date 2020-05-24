@@ -9094,11 +9094,14 @@
     ".NETCoreApp,Version=v3.1": [
       "BL.Abstract >= 1.0.0",
       "BL.Impl >= 1.0.0",
+      "DAL.Abstract >= 1.0.0",
       "DAL.Impl >= 1.0.0",
+      "Entities >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.2",
       "Microsoft.EntityFrameworkCore.Sqlite >= 3.1.2",
       "Microsoft.EntityFrameworkCore.Tools >= 3.1.2",
-      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.2"
+      "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.2",
+      "Models >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -9133,8 +9136,17 @@
             "D:\\univer\\AAA\\web\\NEW START\\ItCompany\\BL.Impl\\BL.Impl.csproj": {
               "projectPath": "D:\\univer\\AAA\\web\\NEW START\\ItCompany\\BL.Impl\\BL.Impl.csproj"
             },
+            "D:\\univer\\AAA\\web\\NEW START\\ItCompany\\DAL.Abstract\\DAL.Abstract.csproj": {
+              "projectPath": "D:\\univer\\AAA\\web\\NEW START\\ItCompany\\DAL.Abstract\\DAL.Abstract.csproj"
+            },
             "D:\\univer\\AAA\\web\\NEW START\\ItCompany\\DAL.Impl\\DAL.Impl.csproj": {
               "projectPath": "D:\\univer\\AAA\\web\\NEW START\\ItCompany\\DAL.Impl\\DAL.Impl.csproj"
+            },
+            "D:\\univer\\AAA\\web\\NEW START\\ItCompany\\Entities\\Entities.csproj": {
+              "projectPath": "D:\\univer\\AAA\\web\\NEW START\\ItCompany\\Entities\\Entities.csproj"
+            },
+            "D:\\univer\\AAA\\web\\NEW START\\ItCompany\\Models\\Models.csproj": {
+              "projectPath": "D:\\univer\\AAA\\web\\NEW START\\ItCompany\\Models\\Models.csproj"
             }
           }
         }

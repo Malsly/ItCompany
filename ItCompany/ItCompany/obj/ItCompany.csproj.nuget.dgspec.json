@@ -386,8 +386,17 @@
               "D:\\univer\\AAA\\web\\NEW START\\ItCompany\\BL.Impl\\BL.Impl.csproj": {
                 "projectPath": "D:\\univer\\AAA\\web\\NEW START\\ItCompany\\BL.Impl\\BL.Impl.csproj"
               },
+              "D:\\univer\\AAA\\web\\NEW START\\ItCompany\\DAL.Abstract\\DAL.Abstract.csproj": {
+                "projectPath": "D:\\univer\\AAA\\web\\NEW START\\ItCompany\\DAL.Abstract\\DAL.Abstract.csproj"
+              },
               "D:\\univer\\AAA\\web\\NEW START\\ItCompany\\DAL.Impl\\DAL.Impl.csproj": {
                 "projectPath": "D:\\univer\\AAA\\web\\NEW START\\ItCompany\\DAL.Impl\\DAL.Impl.csproj"
+              },
+              "D:\\univer\\AAA\\web\\NEW START\\ItCompany\\Entities\\Entities.csproj": {
+                "projectPath": "D:\\univer\\AAA\\web\\NEW START\\ItCompany\\Entities\\Entities.csproj"
+              },
+              "D:\\univer\\AAA\\web\\NEW START\\ItCompany\\Models\\Models.csproj": {
+                "projectPath": "D:\\univer\\AAA\\web\\NEW START\\ItCompany\\Models\\Models.csproj"
               }
             }
           }

@@ -155,8 +155,6 @@ D:\univer\AAA\web\NEW START\ItCompany\ItCompany\bin\Debug\netcoreapp3.1\zh-Hans\
 D:\univer\AAA\web\NEW START\ItCompany\ItCompany\bin\Debug\netcoreapp3.1\zh-Hant\Microsoft.CodeAnalysis.Workspaces.resources.dll
 D:\univer\AAA\web\NEW START\ItCompany\ItCompany\bin\Debug\netcoreapp3.1\Entities.pdb
 D:\univer\AAA\web\NEW START\ItCompany\ItCompany\bin\Debug\netcoreapp3.1\DAL.Abstract.pdb
-D:\univer\AAA\web\NEW START\ItCompany\ItCompany\obj\Debug\netcoreapp3.1\ItCompany.csproj.CoreCompileInputs.cache
-D:\univer\AAA\web\NEW START\ItCompany\ItCompany\obj\Debug\netcoreapp3.1\ItCompany.MvcApplicationPartsAssemblyInfo.cache
 D:\univer\AAA\web\NEW START\ItCompany\ItCompany\obj\Debug\netcoreapp3.1\ItCompany.Views.pdb
 D:\univer\AAA\web\NEW START\ItCompany\ItCompany\obj\Debug\netcoreapp3.1\ItCompany.csproj.CopyComplete
 D:\univer\AAA\web\NEW START\ItCompany\ItCompany\obj\Debug\netcoreapp3.1\staticwebassets\ItCompany.StaticWebAssets.Manifest.cache
